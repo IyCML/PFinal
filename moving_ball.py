@@ -38,17 +38,13 @@ class App_MovingCircle(QMainWindow):
 
         grid = QGridLayout()
 
-        grid.addWidget(self.createPropGroup(),0,0,1,1)
-        grid.addWidget(self.move_btn,0,1,1,1)
-        grid.addWidget(self.graphicsView,1,0,6,10)
+        grid.addWidget(self.createPropGroup(),0,0)
+        grid.addWidget(self.move_btn,0,1)
+        grid.addWidget(self.graphicsView,1,0,1,150)
 
         grid.setRowStretch(0,1)
         grid.setRowStretch(1,6)
         grid.setColumnStretch(0,1)
-        # grid.setColumnStretch(,1)
-        # grid.setColumnStretch(1,10)
-
-
 
         self.window.setLayout(grid)
 
