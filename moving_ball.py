@@ -16,8 +16,8 @@ class App_MovingCircle(QMainWindow):
         self.title = 'Moving circle'
         self.left = 300
         self.top = 30
-        self.width = 700
-        self.height = 700
+        self.width = 400
+        self.height = 500
         self.initUI()
 
     def initUI(self):
@@ -39,11 +39,15 @@ class App_MovingCircle(QMainWindow):
         grid = QGridLayout()
 
         grid.addWidget(self.createPropGroup(),0,0,1,1)
-        grid.addWidget(self.move_btn,0,1,1,2)
-        grid.addWidget(self.graphicsView,1,0,1,3)
+        grid.addWidget(self.move_btn,0,1,1,1)
+        grid.addWidget(self.graphicsView,1,0,6,10)
 
-        # grid.setColumnStretch(1,3)
-        # grid.setColumnStretch(0,4)
+        grid.setRowStretch(0,1)
+        grid.setRowStretch(1,6)
+        grid.setColumnStretch(0,1)
+        # grid.setColumnStretch(,1)
+        # grid.setColumnStretch(1,10)
+
 
 
         self.window.setLayout(grid)
@@ -67,8 +71,6 @@ class App_MovingCircle(QMainWindow):
                                                         symbolPen = 'r',
                                                         symbolBrush='r')
 
-        # self.p1.hideAxis('bottom')
-        # ‘left’, ‘bottom’, ‘right’, or ‘top’
 
         return self.p1
 
@@ -78,6 +80,7 @@ class App_MovingCircle(QMainWindow):
         self.x = QLabel('pos x'); self.xedit = QLineEdit('0')
         self.y = QLabel('pos y'); self.yedit = QLineEdit('1')
         formin = QFormLayout()
+
         formin.addRow(self.radio,self.radioedit)
         formin.addRow(self.x,self.xedit)
         formin.addRow(self.y,self.yedit)
